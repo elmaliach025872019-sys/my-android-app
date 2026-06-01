@@ -18,8 +18,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build APK
+    - name: Initialize Gradle and Build APK
       run: |
+        gradle init --type pom
         gradle assembleDebug
 
     - name: Upload APK
